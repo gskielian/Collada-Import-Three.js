@@ -19,6 +19,6 @@ Options
 
 Viewing Your File:
 ------------------
-If viewing does not work locally on your computer, try selecting the "raw" version of the webgl_loader_collada.html code, and deleting the period after raw and pressing enter: raw.github... -> rawgithub
+If viewing does not work locally on your computer, try using method 3 and selecting the "raw" version of the webgl_loader_collada.html code, and deleting the period after raw and pressing enter: raw.github... -> rawgithub
 
 This should render your page in your browser.
