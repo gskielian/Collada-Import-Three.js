@@ -11,7 +11,7 @@ Options
   * `git clone https://github.com/gskielian/Collada-Import-Three.js.git`
 2. Downloading as a Zip File and editing locally
 3. Getting your own github copy of this repo and editing directly on github;
-  * Select "Fork" on the top right to get your own copy this repository and start modifying the [webgl_loader_collada.html](webgl_loader_collada.html).
+  * Select `Fork` on the top right to get your own copy this repository and start modifying the [webgl_loader_collada.html](webgl_loader_collada.html).
 
 
 
