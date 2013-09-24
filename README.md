@@ -65,11 +65,18 @@ One interesting way to view the file is by grabbing the url of the "raw" webgl_l
 
 
 
-For example, clicking on `webgl_loader_collada.html -> raw` gives you this url:
+For example, clicking on **webgl_loader_collada.html -> raw** gives you this url:
+
 `https://raw.github.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
 
+remove the "." after "raw" 
 
 `https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
 
-(replace `gskielian` with your github username if using this from a forked-repository)
+and press enter, to bring you to a preview created from your Github repository (no server needed).
+
+(This works in general if you ever wanted to view any website from a github repository.)
+
+
+**Note:** replace `gskielian` with your github username if using this from a forked-repository)
 
