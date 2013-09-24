@@ -21,8 +21,15 @@ First find a collada format (.dae) 3D model (please let me know of good 3D model
 
 http://sketchup.google.com/3dwarehouse/
 
+Next, load the file into the directory `./Collada/models/[name of folder]/[name of file].dae`
+
+Finally, change the following lines in the webgl_loader_collada.html file:
+
+```html
 
 
+
+```
 
  
 
