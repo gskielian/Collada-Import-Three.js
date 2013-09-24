@@ -14,6 +14,13 @@ Options
   * Select `Fork` on the top right to get your own copy this repository and start modifying the [webgl_loader_collada.html](webgl_loader_collada.html).
 
 
+Usage
+-----
+
+First find a collada format (.dae) 3D model (I've listed some free ones below):
+
+http://sketchup.google.com/3dwarehouse/
+
 
  
 
