@@ -19,7 +19,7 @@ Options
 Usage
 -----
 
-First find a collada format (.dae) 3D model (please let me know of good 3D model sites:smiley:):
+First find a collada format (.dae) 3D model (please let me know of other good 3D-warehouse-like sites:smiley:):
 
 http://sketchup.google.com/3dwarehouse/
 
