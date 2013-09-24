@@ -77,6 +77,5 @@ and press enter, to bring you to a preview created from your Github repository (
 
 (This works in general if you ever wanted to view any website from a github repository.)
 
-
-**Note:** replace `gskielian` with your github username if using this from a forked-repository)
+### Note: replace `gskielian` with your github username if using this from a forked-repository)
 
