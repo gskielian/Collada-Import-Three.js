@@ -67,11 +67,11 @@ One interesting way to view the file is by grabbing the url of the "raw" webgl_l
 
 For example, clicking on **webgl_loader_collada.html -> raw** gives you this url:
 
-`https://raw.github.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
+https://raw.github.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html
 
-remove the "." after "raw" 
+just remove the "." after "raw" 
 
-`https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
+https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html
 
 and press enter, to bring you to a preview created from your Github repository (no server needed).
 
