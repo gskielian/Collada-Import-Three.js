@@ -17,9 +17,11 @@ Options
 Usage
 -----
 
-First find a collada format (.dae) 3D model (I've listed some free ones below):
+First find a collada format (.dae) 3D model (please let me know of good 3D model sites:smiley:):
 
 http://sketchup.google.com/3dwarehouse/
+
+
 
 
  
