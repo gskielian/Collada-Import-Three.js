@@ -60,10 +60,16 @@ loader.load( './models/collada/[name of folder]/[name of file].dae', function ( 
 
 Viewing Your File:
 ------------------
-If viewing does not work locally on your computer, try using method 3 and selecting the "raw" version of the webgl_loader_collada.html code, and deleting the period after raw and pressing enter: raw.github... -> rawgithub
 
-Or simply click here*:  https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html
+One interesting way to view the file is by grabbing the url of the "raw" webgl_loader_collada.html file in github and removing the `.` between raw and github.
+
+
+
+For example, clicking on `webgl_loader_collada.html -> raw` gives you this url:
+`https://raw.github.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
+
+
+`https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html`
 
 (replace `gskielian` with your github username if using this from a forked-repository)
 
-This should render your page in your browser.
