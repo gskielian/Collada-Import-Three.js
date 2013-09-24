@@ -62,6 +62,8 @@ Viewing Your File:
 ------------------
 If viewing does not work locally on your computer, try using method 3 and selecting the "raw" version of the webgl_loader_collada.html code, and deleting the period after raw and pressing enter: raw.github... -> rawgithub
 
-Or simply click here:  http://rawgithub.com/gskielian/webgl_loader_collada.html (assuming the webgl_loader_collada.hmtl file hasn't been renamed)
+Or simply click here*:  https://rawgithub.com/gskielian/Collada-Import-Three.js/master/webgl_loader_collada.html
+
+(replace `gskielian` with your github username if using this from a forked-repository)
 
 This should render your page in your browser.
