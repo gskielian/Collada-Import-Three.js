@@ -35,7 +35,10 @@ loader.load( './models/collada/monster/monster.dae', function ( collada ) {
 
 				dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
 				dae.updateMatrix();
-
+				dae.position.x = 0;
+				dae.position.y = 0;
+				dae.position.z = 0;
+				
 				init();
 				animate();
 
@@ -50,6 +53,9 @@ loader.load( './models/collada/[name of folder]/[name of file].dae', function ( 
 
 				dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
 				dae.updateMatrix();
+				dae.position.x = 0;
+				dae.position.y = 0;
+				dae.position.z = 0;
 
 				init();
 				animate();
@@ -57,6 +63,8 @@ loader.load( './models/collada/[name of folder]/[name of file].dae', function ( 
 			} );
 ```
  
+*You may need to offset it's x and z positions in order to center the model (remember in three.js y is the up-and-down dimension, z is depth, and x is left-and-right).
+
 
 Viewing Your File:
 ------------------
