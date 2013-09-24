@@ -25,12 +25,35 @@ Next, load the file into the directory `./Collada/models/[name of folder]/[name 
 
 Finally, change the following lines in the webgl_loader_collada.html file:
 
-```html
+```javascript
+loader.load( './models/collada/monster/monster.dae', function ( collada ) {
 
+				dae = collada.scene;
+				skin = collada.skins[ 0 ];
 
+				dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
+				dae.updateMatrix();
 
+				init();
+				animate();
+
+			} );
 ```
+into
+```javascript
+loader.load( './models/collada/[name of folder]/[name of file].dae', function ( collada ) {
 
+				dae = collada.scene;
+				skin = collada.skins[ 0 ];
+
+				dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
+				dae.updateMatrix();
+
+				init();
+				animate();
+
+			} );
+```
  
 
 Viewing Your File:
