@@ -79,6 +79,8 @@
 
 				scene = new THREE.Scene();
 
+			
+				
 				// Grid
 
 				var size = 14, step = 1;
@@ -107,6 +109,47 @@
 				scene.add( particleLight );
 				particleLight2 = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshBasicMaterial( { color: 0xff00dd } ) );
 				scene.add( particleLight2 );
+
+
+	// CONTROLS
+				control = new THREE.TransformControls( camera, renderer.domElement );
+				
+				control.addEventListener( 'change', render );
+
+				
+				control.attach( dae );
+				scene.add( control );
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+				window.addEventListener( 'keydown', function ( event ) {
+		            //console.log(event.which);
+		            switch ( event.keyCode ) {
+		              case 81: // Q
+		                control.setSpace( control.space == "local" ? "world" : "local" );
+		                break;
+		              case 87: // W
+		                control.setMode( "translate" );
+		                break;
+		              case 69: // E
+		                control.setMode( "rotate" );
+		                break;
+		              case 82: // R
+		                control.setMode( "scale" );
+		                break;
+					case 187:
+					case 107: // +,=,num+
+						control.setSize( control.size + 0.1 );
+						break;
+					case 189:
+					case 10: // -,_,num-
+						control.setSize( Math.max(control.size - 0.1, 0.1 ) );
+						break;
+		            }            
+        		});
+
+			
+			//
 
 				// Lights
 
@@ -210,7 +253,8 @@
 				particleLight2.position.z = Math.cos( timer * 5 ) * 4;
 
 				renderer.render( scene, camera );
-
+				//CONTROLS
+				control.update();
 			}
 
 		</script>
