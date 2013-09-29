@@ -246,6 +246,7 @@ control = new THREE.TransformControls( camera, renderer.domElement );
 			}
 
 			function render() {
+				control.update();
 
 				var timer = Date.now() * 0.0004;
 
