@@ -216,21 +216,10 @@ control = new THREE.TransformControls( camera, renderer.domElement );
 			function render() {
 				control.update();
 
-				var timer = Date.now() * 0.0004;
-
-				camera.position.x = Math.cos( timer ) * 20;
-				camera.position.y = 2;
-				camera.position.z = Math.sin( timer ) * 20;
+			
 
 				camera.lookAt( scene.position );
 
-				particleLight.position.x = Math.sin( timer * 5 ) * 4;
-				particleLight.position.y = Math.cos( timer * 3 ) * 4;
-				particleLight.position.z = Math.cos( timer * 5 ) * 4;
-				
-				particleLight2.position.x = - Math.sin( timer * 5 ) * 4;
-				particleLight2.position.y = -Math.cos( timer * 3 ) * 4;
-				particleLight2.position.z = Math.cos( timer * 5 ) * 4;
 
 				renderer.render( scene, camera );
 
