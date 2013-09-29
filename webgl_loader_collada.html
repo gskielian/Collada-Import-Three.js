@@ -39,7 +39,7 @@
 		<script src="js/Detector.js"></script>
 		<script src="js/libs/stats.min.js"></script>
 		
-		<script src="js/Controls/TransformControls.js"></script>
+		<script src="js/controls/TransformControls.js"></script>
 
 		<script>
 
@@ -111,12 +111,12 @@
 				scene.add( particleLight2 );
 
 
-	// CONTROLS
-				control = new THREE.TransformControls( camera, renderer.domElement );
-				
+
+	// CONTROLScontrol = new THREE.TransformControls( camera, renderer.domElement );
+
 				control.addEventListener( 'change', render );
 
-				
+
 				control.attach( dae );
 				scene.add( control );
 
@@ -147,7 +147,6 @@
 						break;
 		            }            
         		});
-
 			
 			//
 
@@ -192,6 +191,8 @@
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
+				render();
+
 
 			}
 
