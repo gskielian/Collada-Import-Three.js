@@ -136,17 +136,6 @@
 				pointLight2.position = particleLight2.position;
 				scene.add( pointLight2 );
 
-				renderer = new THREE.WebGLRenderer();
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-				container.appendChild( renderer.domElement );
-
-				stats = new Stats();
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
-				container.appendChild( stats.domElement );
-
-
 
 //
 
@@ -193,6 +182,17 @@ control = new THREE.TransformControls( camera, renderer.domElement );
 				
 				
 				
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				container.appendChild( renderer.domElement );
+
+				stats = new Stats();
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.top = '0px';
+				container.appendChild( stats.domElement );
+
+
 				
 
 			}
