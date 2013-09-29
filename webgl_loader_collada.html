@@ -237,6 +237,8 @@
 
 			function render() {
 
+				control.update();
+
 				var timer = Date.now() * 0.0004;
 
 				camera.position.x = Math.cos( timer ) * 20;
@@ -255,7 +257,6 @@
 
 				renderer.render( scene, camera );
 				//CONTROLS
-				control.update();
 			}
 
 		</script>
