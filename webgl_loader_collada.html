@@ -39,15 +39,14 @@
 		<script src="js/Detector.js"></script>
 		<script src="js/libs/stats.min.js"></script>
 		
-		<script src="js/controls/TransformControls.js"></script>
 
 		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
-			var container, stats;
+			var container, stats, controller;
 
-			var camera, scene, renderer, objects, controller;
+			var camera, scene, renderer, objects;
 			var particleLight, pointLight;
 			var particleLight2, pointLight2;
 			var dae, skin;
@@ -65,7 +64,7 @@
 				dae.position.y = 0;
 				dae.position.z = 4;
 				init();
-				render();
+				animate();
 
 			} );
 
@@ -79,8 +78,6 @@
 
 				scene = new THREE.Scene();
 
-			
-				
 				// Grid
 
 				var size = 14, step = 1;
@@ -109,46 +106,6 @@
 				scene.add( particleLight );
 				particleLight2 = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshBasicMaterial( { color: 0xff00dd } ) );
 				scene.add( particleLight2 );
-
-
-
-	// CONTROLScontrol = new THREE.TransformControls( camera, renderer.domElement );
-
-				control.addEventListener( 'change', render );
-
-
-				control.attach( dae );
-				scene.add( control );
-
-				window.addEventListener( 'resize', onWindowResize, false );
-
-				window.addEventListener( 'keydown', function ( event ) {
-		            //console.log(event.which);
-		            switch ( event.keyCode ) {
-		              case 81: // Q
-		                control.setSpace( control.space == "local" ? "world" : "local" );
-		                break;
-		              case 87: // W
-		                control.setMode( "translate" );
-		                break;
-		              case 69: // E
-		                control.setMode( "rotate" );
-		                break;
-		              case 82: // R
-		                control.setMode( "scale" );
-		                break;
-					case 187:
-					case 107: // +,=,num+
-						control.setSize( control.size + 0.1 );
-						break;
-					case 189:
-					case 10: // -,_,num-
-						control.setSize( Math.max(control.size - 0.1, 0.1 ) );
-						break;
-		            }            
-        		});
-			
-			//
 
 				// Lights
 
@@ -191,8 +148,6 @@
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
-				render();
-
 
 			}
 
@@ -201,11 +156,41 @@
 			var t = 0;
 			var clock = new THREE.Clock();
 
-		
+			function animate() {
+
+				var delta = clock.getDelta();
+
+				requestAnimationFrame( animate );
+
+				if ( t > 1 ) t = 0;
+
+				if ( skin ) {
+
+					// guess this can be done smarter...
+
+					// (Indeed, there are way more frames than needed and interpolation is not used at all
+					//  could be something like - one morph per each skinning pose keyframe, or even less,
+					//  animation could be resampled, morphing interpolation handles sparse keyframes quite well.
+					//  Simple animation cycles like this look ok with 10-15 frames instead of 100 ;)
+
+					for ( var i = 0; i < skin.morphTargetInfluences.length; i++ ) {
+
+						skin.morphTargetInfluences[ i ] = 0;
+
+					}
+
+					skin.morphTargetInfluences[ Math.floor( t * 30 ) ] = 1;
+
+					t += delta;
+
+				}
+
+				render();
+				stats.update();
+
+			}
 
 			function render() {
-
-				control.update();
 
 				var timer = Date.now() * 0.0004;
 
@@ -224,7 +209,7 @@
 				particleLight2.position.z = Math.cos( timer * 5 ) * 4;
 
 				renderer.render( scene, camera );
-				//CONTROLS
+
 			}
 
 		</script>
