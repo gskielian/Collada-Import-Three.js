@@ -51,8 +51,11 @@
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
-			var container, stats;
+			var control;
 
+
+			var container, stats;
+			
 			var camera, scene, renderer, objects;
 			var particleLight, pointLight;
 			var particleLight2, pointLight2;
@@ -143,9 +146,54 @@
 				stats.domElement.style.top = '0px';
 				container.appendChild( stats.domElement );
 
-				//
+
+
+//
+
+control = new THREE.TransformControls( camera, renderer.domElement );
+
+				control.addEventListener( 'change', render );
+
+
+				control.attach( dae );
+				scene.add( control );
 
 				window.addEventListener( 'resize', onWindowResize, false );
+
+				window.addEventListener( 'keydown', function ( event ) {
+		            //console.log(event.which);
+		            switch ( event.keyCode ) {
+		              case 81: // Q
+		                control.setSpace( control.space == "local" ? "world" : "local" );
+		                break;
+		              case 87: // W
+		                control.setMode( "translate" );
+		                break;
+		              case 69: // E
+		                control.setMode( "rotate" );
+		                break;
+		              case 82: // R
+		                control.setMode( "scale" );
+		                break;
+					case 187:
+					case 107: // +,=,num+
+						control.setSize( control.size + 0.1 );
+						break;
+					case 189:
+					case 10: // -,_,num-
+						control.setSize( Math.max(control.size - 0.1, 0.1 ) );
+						break;
+		            }            
+        		});
+//
+
+
+
+				window.addEventListener( 'resize', onWindowResize, false );
+				
+				
+				
+				
 
 			}
 
