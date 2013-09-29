@@ -31,10 +31,16 @@
 
 		<script src="./build/three.min.js"></script>
 		<script src="js/controls/TransformControls.js"></script>
+		<script src="js/loaders/ColladaLoader.js"></script>
 
 		<script>
 
 			var camera, scene, renderer, control;
+			var container, stats;
+
+			var objects;
+			var particleLight, pointLight;
+			var dae, skin;
 
 			init();
 			render();
@@ -67,6 +73,19 @@
 				var material = new THREE.MeshLambertMaterial( { map: texture } );
 
 				control = new THREE.TransformControls( camera, renderer.domElement );
+				//
+				var loader = new THREE.ColladaLoader();
+				loader.options.convertUpAxis = true;
+				loader.load( './models/collada/monster/monster.dae', function ( collada ) {
+
+				dae = collada.scene;
+				skin = collada.skins[ 0 ];
+
+				dae.scale.x = dae.scale.y = dae.scale.z = 0.002;
+				dae.updateMatrix();
+
+				init();
+				//
 
 				control.addEventListener( 'change', render );
 
